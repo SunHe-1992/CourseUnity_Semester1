@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -23,10 +22,10 @@ public class PingPongPlay : MonoBehaviour
         }
         if (spCtrl == null)
         {
-            spCtrl = ball.AddComponent<SphereController>();
+            spCtrl = ball.gameObject.AddComponent<SphereController>();
         }
-        pCtrl1 = paddle1.AddComponent<PaddleController>();
-        pCtrl2 = paddle2.AddComponent<PaddleController>();
+        pCtrl1 = paddle1.gameObject.AddComponent<PaddleController>();
+        pCtrl2 = paddle2.gameObject.AddComponent<PaddleController>();
         pCtrl1.ResetPos();
         pCtrl2.ResetPos();
     }
