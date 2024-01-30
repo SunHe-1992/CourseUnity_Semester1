@@ -2,32 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using TMPro;
 public class PingPongPlay : MonoBehaviour
 {
+    public static PingPongPlay instance;
     public SphereController spCtrl;
-    public Transform paddle1;
-    public Transform paddle2;
+    public Transform paddleRight;
+    public Transform paddleLeft;
     public Transform ball;
-    public PaddleController pCtrl1;
-    public PaddleController pCtrl2;
+    public PaddleController pCtrlRight;
+    public PaddleController pCtrlLeft;
+
+    public TMPro.TMP_Text infoText;
+    public TMPro.TMP_Text scoreText;
+    private void Awake()
+    {
+        instance = this;
+    }
+    private void OnDestroy()
+    {
+        instance = null;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        if (paddle1 == null)
+        if (paddleRight == null)
         {
-            paddle1 = GameObject.Find("paddle1").transform;
-            paddle2 = GameObject.Find("paddle2").transform;
+            paddleRight = GameObject.Find("paddleRight").transform;
+            paddleLeft = GameObject.Find("paddleLeft").transform;
             ball = GameObject.Find("ball").transform;
+            infoText = GameObject.Find("Canvas/infoText").GetComponent<TMP_Text>();
+            scoreText = GameObject.Find("Canvas/scoreText").GetComponent<TMP_Text>();
         }
         if (spCtrl == null)
         {
             spCtrl = ball.gameObject.AddComponent<SphereController>();
         }
-        pCtrl1 = paddle1.gameObject.AddComponent<PaddleController>();
-        pCtrl2 = paddle2.gameObject.AddComponent<PaddleController>();
-        pCtrl1.ResetPos();
-        pCtrl2.ResetPos();
+        pCtrlRight = paddleRight.gameObject.AddComponent<PaddleController>();
+        pCtrlLeft = paddleLeft.gameObject.AddComponent<PaddleController>();
+        pCtrlRight.ResetPos();
+        pCtrlLeft.ResetPos();
+
+        SetAndUpdateGamePhase(GamePhase.BeforeGame);
     }
 
     // Update is called once per frame
@@ -35,7 +51,7 @@ public class PingPongPlay : MonoBehaviour
     {
         ReadInput();
     }
-    
+
     float sensitivity = 0.1f;
     float input_h;
     float input_v;
@@ -47,10 +63,72 @@ public class PingPongPlay : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.F1))
         {
+            SetAndUpdateGamePhase(GamePhase.DuringGame);
             spCtrl.StartAddForce();
         }
 
-        pCtrl1.SetXMove(input_h);
-        pCtrl2.SetXMove(input_v);
+        pCtrlRight.SetXMove(input_h);
+        pCtrlLeft.SetXMove(input_v);
     }
+
+
+    #region Score and gameplay
+
+    public GamePhase phase = GamePhase.BeforeGame;
+    int gameRound;
+    int leftScore;
+    int rightScore;
+
+    void InitScores()
+    {
+        leftScore = 0;
+        rightScore = 0;
+    }
+    public void Scored(int sensorId)
+    {
+        // left=1 right=2
+        if (sensorId == 1)
+        {
+            leftScore++;
+        }
+        else
+        {
+            rightScore++;
+        }
+        UpdatePhase();
+    }
+    void SetAndUpdateGamePhase(GamePhase _phase)
+    {
+        this.phase = _phase;
+        UpdatePhase();
+    }
+    void UpdatePhase()
+    {
+        switch (phase)
+        {
+            case GamePhase.BeforeGame: UpdateTextBeforeGame(); break;
+            case GamePhase.DuringGame: UpdateScoreText(); break;
+            case GamePhase.Ending: break;
+
+        }
+    }
+    void UpdateTextBeforeGame()
+    {
+        infoText.text = "Welcome Pong";
+        scoreText.text = "Press F1 to Start Game";
+    }
+    void UpdateScoreText()
+    {
+        infoText.text = "";
+        string scoreStr = $"{leftScore} - {rightScore}";
+        scoreText.text = scoreStr;
+    }
+    #endregion
+}
+
+public enum GamePhase
+{
+    BeforeGame = 1,
+    DuringGame = 2,
+    Ending = 3,
 }
