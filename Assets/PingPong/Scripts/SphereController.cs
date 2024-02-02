@@ -17,7 +17,8 @@ public class SphereController : MonoBehaviour
     {
         if (body != null)
         {
-            body.AddForce(new Vector3(1000, 0, 333));
+            var forceVect = MathUtil.GenerateRandomVector3(1200f);
+            body.AddForce(forceVect);
         }
     }
     // Update is called once per frame

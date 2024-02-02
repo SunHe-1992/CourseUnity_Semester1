@@ -120,7 +120,7 @@ public class PingPongPlay : MonoBehaviour
     void UpdateScoreText()
     {
         infoText.text = "";
-        string scoreStr = $"{leftScore} - {rightScore}";
+        string scoreStr = $"{rightScore} - {leftScore}";
         scoreText.text = scoreStr;
     }
     #endregion
