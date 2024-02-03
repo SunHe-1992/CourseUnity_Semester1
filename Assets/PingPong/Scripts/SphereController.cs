@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class SphereController : MonoBehaviour
 {
+    public float speed = 20f;
     Rigidbody body;
+    ParticleSystem effect;
     // Start is called before the first frame update
     void Start()
     {
         if (body == null)
         {
             body = GetComponent<Rigidbody>();
+            var childTrans = this.transform.Find("CFX4 Magic Hit");
+            effect = childTrans.gameObject.GetComponent<ParticleSystem>();
+
         }
     }
     public void StartAddForce()
@@ -24,11 +29,16 @@ public class SphereController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.transform.position.y < -2f) //ball dropped off from table
+        if (Vector3.Distance(this.transform.position, Vector3.zero) > 10f) //ball dropped off from table
         {
             Judge();
             ResetPos();
-            ResetSpeed();
+            StopMoving();
+        }
+
+        if (PingPongPlay.instance.phase == GamePhase.DuringGame)
+        {
+            SetSpeed();
         }
     }
     void Judge()
@@ -50,8 +60,35 @@ public class SphereController : MonoBehaviour
 
         this.transform.position = new Vector3(0, 0.55f, 0);
     }
-    void ResetSpeed()
+    void StopMoving()
     {
         body.velocity = Vector3.zero;
+    }
+    void SetSpeed()
+    {
+        if (this.body.velocity.magnitude > 1f)
+        {
+            this.body.velocity = body.velocity.normalized * speed;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        var rb = body;
+        Vector3 reflectVect = Vector3.Reflect(rb.velocity.normalized, collision.contacts[0].normal).normalized;
+        rb.velocity = reflectVect * speed;
+
+        //random fix direction
+        //Vector3 fixVect = (this.transform.position.normalized * 0.1f);
+        //fixVect = (reflectVect + fixVect) * speed;
+        //fixVect.y = 0;
+        //rb.velocity = fixVect;
+        PlayEffect();
+
+    }
+
+    void PlayEffect()
+    {
+        effect.Play();
     }
 }

@@ -42,7 +42,7 @@ public class PingPongPlay : MonoBehaviour
         pCtrlLeft = paddleLeft.gameObject.AddComponent<PaddleController>();
         pCtrlRight.ResetPos();
         pCtrlLeft.ResetPos();
-
+        InitScores();
         SetAndUpdateGamePhase(GamePhase.BeforeGame);
     }
 
@@ -63,8 +63,16 @@ public class PingPongPlay : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.F1))
         {
-            SetAndUpdateGamePhase(GamePhase.DuringGame);
-            spCtrl.StartAddForce();
+            if (phase == GamePhase.Ending)
+            {
+                SetAndUpdateGamePhase(GamePhase.BeforeGame);
+
+            }
+            else if (phase == GamePhase.BeforeGame)
+            {
+                SetAndUpdateGamePhase(GamePhase.DuringGame);
+                spCtrl.StartAddForce();
+            }
         }
 
         pCtrlRight.SetXMove(input_h);
@@ -78,7 +86,7 @@ public class PingPongPlay : MonoBehaviour
     int gameRound;
     int leftScore;
     int rightScore;
-
+    readonly int winScore = 5;
     void InitScores()
     {
         leftScore = 0;
@@ -96,8 +104,9 @@ public class PingPongPlay : MonoBehaviour
             rightScore++;
         }
         UpdatePhase();
+        CheckWin();
     }
-    void SetAndUpdateGamePhase(GamePhase _phase)
+    public void SetAndUpdateGamePhase(GamePhase _phase)
     {
         this.phase = _phase;
         UpdatePhase();
@@ -106,22 +115,52 @@ public class PingPongPlay : MonoBehaviour
     {
         switch (phase)
         {
-            case GamePhase.BeforeGame: UpdateTextBeforeGame(); break;
+            case GamePhase.BeforeGame:
+                UpdateTextBeforeGame();
+                break;
             case GamePhase.DuringGame: UpdateScoreText(); break;
-            case GamePhase.Ending: break;
+            case GamePhase.Ending:
+
+                break;
 
         }
     }
     void UpdateTextBeforeGame()
     {
-        infoText.text = "Welcome Pong";
+        infoText.text = "Welcome Pong" + $" {rightScore} - {leftScore}";
         scoreText.text = "Press F1 to Start Game";
     }
     void UpdateScoreText()
     {
-        infoText.text = "";
         string scoreStr = $"{rightScore} - {leftScore}";
         scoreText.text = scoreStr;
+    }
+
+    void CheckWin()
+    {
+        bool roundEnd = false;
+        string winStr = "";
+        if (leftScore >= winScore)
+        {
+            roundEnd = true;
+            winStr = "Left Win";
+        }
+        else if (rightScore >= winScore)
+        {
+            roundEnd = true;
+            winStr = "Right Win";
+        }
+        else
+        {
+            SetAndUpdateGamePhase(GamePhase.BeforeGame);
+        }
+        if (roundEnd)
+        {
+            infoText.text = winStr + " Press F1 to Continue";
+            SetAndUpdateGamePhase(GamePhase.Ending);
+            UpdateScoreText();
+            InitScores();
+        }
     }
     #endregion
 }
