@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: f224782f45a270047bf9ba456c5f1f83
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8713527955456261569
+    second: tp-hd_0
+  - first:
+      213: -4650810809847029330
+    second: tp-hd_1
+  - first:
+      213: -7824863307509492119
+    second: tp-hd_2
+  - first:
+      213: 8622178343719800901
+    second: tp-hd_3
+  - first:
+      213: 8307543021506865428
+    second: tp-hd_4
+  - first:
+      213: -8376001398110412744
+    second: tp-hd_5
+  - first:
+      213: -2732415197477901559
+    second: tp-hd_6
+  - first:
+      213: 8109055379268475451
+    second: tp-hd_7
+  - first:
+      213: 1278242135163287493
+    second: tp-hd_8
+  - first:
+      213: -8085238301471050482
+    second: tp-hd_9
+  - first:
+      213: -6435282177560669552
+    second: tp-hd_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tp-hd_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1523
+        width: 203
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41877884ea9240346816a3da12a84f52
+      internalID: -531056139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_1
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1521
+        width: 605
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1384baabfc4581947a85e51ff3213ecb
+      internalID: -1338046474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_2
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 1521
+        width: 606
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac2fd60a48e22f46838e2347635713a
+      internalID: -616215449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_3
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 1520
+        width: 604
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5030be64a789d040b732bba2c401684
+      internalID: 1846843764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_4
+      rect:
+        serializedVersion: 2
+        x: 2068
+        y: 1519
+        width: 607
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcae022f0de42d643b50c520f94ff267
+      internalID: 1224130495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_5
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1302
+        width: 604
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47342655ab3e26748ad61424fa630b5d
+      internalID: 1498873657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_6
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 1499
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30037819254d1c439961b247ddcf54c
+      internalID: 1502018110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_7
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 786
+        width: 1283
+        height: 723
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb9b5f88892da849bcab6a27d2cd897
+      internalID: -1577093869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_8
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1023
+        width: 301
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f0dc7ec23227c4c9ea22614084a920
+      internalID: 527413805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 6
+        width: 1368
+        height: 772
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4cecbcc1b839f5439abe950f247582c
+      internalID: 823752391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tp-hd_10
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 6
+        width: 1368
+        height: 772
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78cda012279b281469a42d0f7d2d9564
+      internalID: 1326709616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b5b35cf04b425d040911ffec80a9c724
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      tp-hd_0: -531056139
+      tp-hd_1: -1338046474
+      tp-hd_10: 1326709616
+      tp-hd_2: -616215449
+      tp-hd_3: 1846843764
+      tp-hd_4: 1224130495
+      tp-hd_5: 1498873657
+      tp-hd_6: 1502018110
+      tp-hd_7: -1577093869
+      tp-hd_8: 527413805
+      tp-hd_9: 823752391
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
