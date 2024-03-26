@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
 
     Animator animator;
+    //Text showText;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        //showText = GameObject.Find("Canvas/TextAnim").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -36,5 +39,10 @@ public class CharacterController : MonoBehaviour
         else
             animator.SetFloat("speed", 0);
 
+
+        //if (showText != null)
+        //{
+        //     showText.text ="anim = "+ animator.GetCurrentAnimatorClipInfo(0).
+        //}
     }
 }
